@@ -23,7 +23,6 @@ function handleSearch(event) {
   } else {
     fetchCountries(searchKey)
       .then(data => {
-        console.log(data);
         if (data.length > 10) {
           Notify.info('Too many matches found. Please enter a more specific name');
           clearCountryList();
@@ -52,7 +51,6 @@ function countryListMurkup(countryArray) {
 }
 
 function countryInfoMurkup(countryArray) {
-  console.log(countryArray);
   return countryArray
     .map(({ name, flags, capital, population, languages }) => {
       return `<div class="country-info__name"><img src="${flags.svg}" alt="${
